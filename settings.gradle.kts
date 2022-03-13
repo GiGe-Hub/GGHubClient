@@ -1,3 +1,5 @@
+includeBuild("./plugin")
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -14,7 +16,6 @@ dependencyResolutionManagement {
     }
 }
 
-includeBuild("./plugin")
 
 include(":app")
 //include(":qmui")
@@ -24,9 +25,9 @@ include(":app")
 //include(":arch-compiler")
 //include(":arch-annotation")
 //include(":type")
-//include(":compose-core")
-//include(":compose")
-//include(":photo")
-//include(":photo-coil")
+include(":compose-core")
+include(":compose")
+include(":photo")
+include(":photo-coil")
 
 

@@ -1,5 +1,4 @@
 import com.sophimp.plugin.Dep
-import java.io.ByteArrayOutputStream
 import java.util.*
 
 plugins {
@@ -8,14 +7,14 @@ plugins {
     kotlin("kapt")
 }
 
-fun runCommand(project: Project, command: String): String {
-    val stdout = ByteArrayOutputStream()
-    project.exec {
-        commandLine = command.split(" ")
-        standardOutput = stdout
-    }
-    return stdout.toString().trim()
-}
+//fun runCommand(project: Project, command: String): String {
+//    val stdout = ByteArrayOutputStream()
+//    project.exec {
+//        commandLine = command.split(" ")
+//        standardOutput = stdout
+//    }
+//    return stdout.toString().trim()
+//}
 
 
 //val gitVersion = runCommand(project, "git rev-list HEAD --count").toIntOrNull() ?: 1
@@ -57,7 +56,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.gghub"
+        applicationId = "com.gghub.app"
         minSdk = Dep.SdkVersion.minSdkVersion
         targetSdk = Dep.SdkVersion.targetSdkVersion
 //        versionCode = gitVersion

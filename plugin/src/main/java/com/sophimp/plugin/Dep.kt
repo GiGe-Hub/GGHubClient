@@ -101,7 +101,7 @@ object Dep {
         }
 
         object CommonLib {
-            const val appcompat_version = "1.4.0"
+            private const val appcompat_version = "1.4.0"
             const val appCompat = "androidx.appcompat:appcompat:$appcompat_version"
             const val fragment = "androidx.fragment:fragment:${appcompat_version}"
             const val activity = "androidx.activity:activity-ktx:${appcompat_version}"
