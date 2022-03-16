@@ -70,9 +70,18 @@ object Dep {
 
         const val conscrypt = "org.conscrypt:conscrypt-android:1.1.0"
 
-        const val okhttp = "com.squareup.okhttp3:okhttp:4.9.1"
-
         const val autoAccess = "com.neenbedankt.gradle.plugins:android-apt:1.8"
+    }
+
+    object Square {
+        const val okhttp = "com.squareup.okhttp3:okhttp:4.9.1"
+        const val okio = "com.squareup.okio:okio:3.0.0"
+
+        private const val retrofitVersion = "2.1.0"
+        const val retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+        const val retrofitConverterGson = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+        const val retrofitAdapterRxjava = "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion"
+        const val retrofitConverterSimpleXml = "com.squareup.retrofit2:converter-simplexml:$retrofitVersion"
     }
 
     object AndroidX {
@@ -192,15 +201,6 @@ object Dep {
         const val rxhttpCompiler = "com.github.liujingxing.rxhttp:rxhttp-compiler:$version"
     }
 
-    object Retrofit {
-        private const val version = "2.1.0"
-        const val retrofit = "com.squareup.retrofit2:retrofit:$version"
-        const val retrofitConverterGson = "com.squareup.retrofit2:converter-gson:$version"
-        const val retrofitAdapterRxjava = "com.squareup.retrofit2:adapter-rxjava:$version"
-        const val retrofitConverterSimpleXml =
-            "com.squareup.retrofit2:converter-simplexml:$version"
-    }
-
     object Dagger2 {
         private const val version = "2.40.5"
         const val dagger2 = "com.google.dagger:dagger:$version"
@@ -233,5 +233,13 @@ object Dep {
 
     object Coil {
         const val compose = "io.coil-kt:coil-compose:2.0.0-alpha06"
+    }
+
+    object Apollo {
+        private const val version = "3.1.0"
+        const val apolloRuntime = "com.apollographql.apollo3:apollo-runtime:$version"
+        const val apolloCacheSqlite = "com.apollographql.apollo3:apollo-normalized-cache-sqlite:$version"
+        const val apolloApi = "com.apollographql.apollo3:apollo-api:$version"
+
     }
 }
