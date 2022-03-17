@@ -74,7 +74,10 @@ object Dep {
     }
 
     object Square {
-        const val okhttp = "com.squareup.okhttp3:okhttp:4.9.1"
+        private const val okhttpVersion = "4.9.3"
+        const val okhttp = "com.squareup.okhttp3:okhttp:$okhttpVersion"
+        const val okhttpLogInterceptor = "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+
         const val okio = "com.squareup.okio:okio:3.0.0"
 
         private const val retrofitVersion = "2.1.0"
@@ -236,7 +239,7 @@ object Dep {
     }
 
     object Apollo {
-        private const val version = "3.1.0"
+        const val version = "3.1.0"
         const val apolloRuntime = "com.apollographql.apollo3:apollo-runtime:$version"
         const val apolloCacheSqlite = "com.apollographql.apollo3:apollo-normalized-cache-sqlite:$version"
         const val apolloApi = "com.apollographql.apollo3:apollo-api:$version"

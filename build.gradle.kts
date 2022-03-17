@@ -4,6 +4,7 @@ buildscript {
     repositories {
         mavenCentral()
         google()
+        maven(url = "https://mvnrepository.com")
         mavenLocal()
     }
     dependencies {
@@ -15,18 +16,19 @@ buildscript {
 
 plugins {
     id("sophimp-dep")
-    id("com.android.library") version "7.1.2" apply false
-    id("org.jetbrains.kotlin.android") version "1.5.30" apply false
+//    id("com.android.library") version "7.1.2" apply false
+//    id("org.jetbrains.kotlin.android") version "1.5.30" apply false
 }
 
 subprojects {
     group = Dep.DepPlug.group
 }
 
-//allprojects {
-//    repositories {
-//        mavenCentral()
-//        google()
-//        mavenLocal()
-//    }
-//}
+allprojects {
+    repositories {
+        mavenCentral()
+        maven(url = "https://mvnrepository.com")
+        google()
+        mavenLocal()
+    }
+}
