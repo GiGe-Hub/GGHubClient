@@ -39,6 +39,13 @@ android {
     }
 }
 
+apollo {
+    packageName.set("com.gghub.api")
+
+    // Alternatively, if you're migrating from 2.x, you can keep the 2.x
+    // behaviour with `packageNamesFromFilePaths()`:
+//    packageNamesFromFilePaths()
+}
 
 dependencies {
     implementation(Dep.AndroidX.annotation)

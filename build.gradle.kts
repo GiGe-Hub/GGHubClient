@@ -24,11 +24,11 @@ subprojects {
     group = Dep.DepPlug.group
 }
 
-allprojects {
-    repositories {
-        mavenCentral()
-        maven(url = "https://mvnrepository.com")
-        google()
-        mavenLocal()
-    }
-}
+//allprojects {
+//    repositories {
+//        mavenCentral()
+//        maven(url = "https://mvnrepository.com")
+//        google()
+//        mavenLocal()
+//    }
+//}
