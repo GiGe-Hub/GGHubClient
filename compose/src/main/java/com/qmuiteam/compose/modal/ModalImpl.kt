@@ -19,7 +19,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
-import androidx.core.view.isVisible
 import kotlinx.coroutines.flow.MutableStateFlow
 
 internal abstract class QMUIModalPresent(
@@ -27,7 +26,7 @@ internal abstract class QMUIModalPresent(
     private val onBackPressedDispatcher: OnBackPressedDispatcher,
     val mask: Color = DefaultMaskColor,
     val systemCancellable: Boolean = true,
-    val maskCancellable: Boolean = true
+    val maskTouchBehavior: MaskTouchBehavior = MaskTouchBehavior.dismiss,
 ) : QMUIModal {
 
     private val onShowListeners = arrayListOf<QMUIModal.Action>()
@@ -61,10 +60,13 @@ internal abstract class QMUIModalPresent(
 
     private fun doAfterDismiss() {
         isDismissing = false
-        composeLayout.isVisible = false
+        composeLayout.visibility = View.GONE
         composeLayout.disposeComposition()
         rootLayout.removeView(composeLayout)
         onBackPressedCallback.remove()
+        onDismissListeners.forEach {
+            it.invoke(this)
+        }
     }
 
     @Composable
@@ -74,15 +76,19 @@ internal abstract class QMUIModalPresent(
         return isShown
     }
 
-    override fun show() {
+    override fun show(): QMUIModal {
         if (isShown || isDismissing) {
-            return
+            return this
         }
         isShown = true
         rootLayout.addView(composeLayout, generateLayoutParams())
         composeLayout.visibility = View.VISIBLE
         visibleFlow.value = true
         onBackPressedDispatcher.addCallback(onBackPressedCallback)
+        onShowListeners.forEach {
+            it.invoke(this)
+        }
+        return this
     }
 
     open fun generateLayoutParams(): FrameLayout.LayoutParams {
@@ -101,20 +107,24 @@ internal abstract class QMUIModalPresent(
         visibleFlow.value = false
     }
 
-    override fun doOnShow(listener: QMUIModal.Action) {
+    override fun doOnShow(listener: QMUIModal.Action): QMUIModal {
         onShowListeners.add(listener)
+        return this
     }
 
-    override fun doOnDismiss(listener: QMUIModal.Action) {
+    override fun doOnDismiss(listener: QMUIModal.Action): QMUIModal {
         onDismissListeners.add(listener)
+        return this
     }
 
-    override fun removeOnShowAction(listener: QMUIModal.Action) {
+    override fun removeOnShowAction(listener: QMUIModal.Action): QMUIModal {
         onShowListeners.remove(listener)
+        return this
     }
 
-    override fun removeOnDismissAction(listener: QMUIModal.Action) {
+    override fun removeOnDismissAction(listener: QMUIModal.Action): QMUIModal {
         onDismissListeners.remove(listener)
+        return this
     }
 }
 
@@ -123,14 +133,14 @@ internal class StillModalImpl(
     onBackPressedDispatcher: OnBackPressedDispatcher,
     mask: Color = DefaultMaskColor,
     systemCancellable: Boolean = true,
-    maskCancellable: Boolean = true,
+    maskTouchBehavior: MaskTouchBehavior = MaskTouchBehavior.dismiss,
     val content: @Composable (modal: QMUIModal) -> Unit
 ) : QMUIModalPresent(
     rootLayout,
     onBackPressedDispatcher,
     mask,
     systemCancellable,
-    maskCancellable
+    maskTouchBehavior
 ) {
 
     @Composable
@@ -140,12 +150,18 @@ internal class StillModalImpl(
                 modifier = Modifier
                     .fillMaxSize()
                     .background(mask)
-                    .clickable(
-                        interactionSource = remember { MutableInteractionSource() },
-                        indication = null,
-                        enabled = maskCancellable
-                    ) {
-                        dismiss()
+                    .let {
+                        if (maskTouchBehavior == MaskTouchBehavior.penetrate) {
+                            it
+                        } else {
+                            it.clickable(
+                                interactionSource = remember { MutableInteractionSource() },
+                                indication = null,
+                                enabled = maskTouchBehavior == MaskTouchBehavior.dismiss
+                            ) {
+                                dismiss()
+                            }
+                        }
                     }
             )
         } else {
@@ -163,7 +179,7 @@ internal class AnimateModalImpl(
     onBackPressedDispatcher: OnBackPressedDispatcher,
     mask: Color = DefaultMaskColor,
     systemCancellable: Boolean = true,
-    maskCancellable: Boolean = true,
+    maskTouchBehavior: MaskTouchBehavior = MaskTouchBehavior.dismiss,
     val durationMillis: Int = 300,
     val content: @Composable AnimatedVisibilityScope.(modal: QMUIModal) -> Unit
 ) : QMUIModalPresent(
@@ -171,7 +187,7 @@ internal class AnimateModalImpl(
     onBackPressedDispatcher,
     mask,
     systemCancellable,
-    maskCancellable
+    maskTouchBehavior
 ) {
 
     @Composable
@@ -184,13 +200,20 @@ internal class AnimateModalImpl(
             Box(modifier = Modifier
                 .fillMaxSize()
                 .background(mask)
-                .clickable(
-                    interactionSource = remember { MutableInteractionSource() },
-                    indication = null,
-                    enabled = maskCancellable
-                ) {
-                    dismiss()
-                })
+                .let {
+                    if (maskTouchBehavior == MaskTouchBehavior.penetrate) {
+                        it
+                    } else {
+                        it.clickable(
+                            interactionSource = remember { MutableInteractionSource() },
+                            indication = null,
+                            enabled = maskTouchBehavior == MaskTouchBehavior.dismiss
+                        ) {
+                            dismiss()
+                        }
+                    }
+                }
+            )
             content(this@AnimateModalImpl)
             DisposableEffect("") {
                 onDispose {

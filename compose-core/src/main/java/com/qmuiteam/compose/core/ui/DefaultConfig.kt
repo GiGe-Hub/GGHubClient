@@ -10,6 +10,7 @@ val qmuiTextMainColor = Color.Black
 val qmuiTextDescColor = Color(0xFF666666)
 
 
+
 val qmuiTopBarHeight = 48.dp
 val qmuiTopBarZIndex = 32f
 val qmuiCommonHorSpace = 20.dp
@@ -17,6 +18,7 @@ val qmuiScrollAlphaChangeMaxOffset = 20.dp
 
 
 val qmuiDialogVerEdgeProtectionMargin = 44.dp
+val qmuiToastVerEdgeProtectionMargin = 96.dp
 
 
 

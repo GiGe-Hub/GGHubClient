@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.qmuiteam.compose.R
+import com.qmuiteam.compose.core.R
 import com.qmuiteam.compose.core.ui.*
 
 val DefaultDialogPaddingHor = 20.dp
@@ -324,7 +324,7 @@ fun QMUIDialogAction(
 fun View.qmuiDialog(
     mask: Color = DefaultMaskColor,
     systemCancellable: Boolean = true,
-    maskCancellable: Boolean = true,
+    maskTouchBehavior: MaskTouchBehavior = MaskTouchBehavior.dismiss,
     modalHostProvider: ModalHostProvider = DefaultModalHostProvider,
     animationDurationMillis: Int = 300,
     horEdge: Dp = qmuiCommonHorSpace,
@@ -337,9 +337,9 @@ fun View.qmuiDialog(
     return qmuiModal(
         mask,
         systemCancellable,
-        maskCancellable,
+        maskTouchBehavior,
         animationDurationMillis,
-        modalHostProvider
+        modalHostProvider = modalHostProvider
     ) { modal ->
         QMUIDialog(modal, horEdge, verEdge, widthLimit, radius, background, content)
     }
@@ -348,7 +348,7 @@ fun View.qmuiDialog(
 fun View.qmuiStillDialog(
     mask: Color = DefaultMaskColor,
     systemCancellable: Boolean = true,
-    maskCancellable: Boolean = true,
+    maskTouchBehavior: MaskTouchBehavior = MaskTouchBehavior.dismiss,
     modalHostProvider: ModalHostProvider = DefaultModalHostProvider,
     horEdge: Dp = 20.dp,
     verEdge: Dp = 20.dp,
@@ -357,7 +357,12 @@ fun View.qmuiStillDialog(
     background: Color = Color.White,
     content: @Composable (QMUIModal) -> Unit
 ): QMUIModal {
-    return qmuiStillModal(mask, systemCancellable, maskCancellable, modalHostProvider) { modal ->
+    return qmuiStillModal(
+        mask,
+        systemCancellable,
+        maskTouchBehavior,
+        modalHostProvider = modalHostProvider
+    ) { modal ->
         QMUIDialog(modal, horEdge, verEdge, widthLimit, radius, background, content)
     }
 }
