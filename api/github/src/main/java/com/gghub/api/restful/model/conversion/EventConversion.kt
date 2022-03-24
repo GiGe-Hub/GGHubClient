@@ -2,14 +2,14 @@ package com.gghub.api.restful.model.conversion
 
 
 import android.content.Context
-import com.shuyu.github.kotlin.R
-import com.shuyu.github.kotlin.common.utils.CommonUtils
+import com.gghub.api.R
 import com.gghub.api.restful.model.bean.Event
 import com.gghub.api.restful.model.bean.Notification
 import com.gghub.api.restful.model.bean.RepoCommit
 import com.gghub.api.restful.model.ui.CommitUIModel
 import com.gghub.api.restful.model.ui.EventUIAction
 import com.gghub.api.restful.model.ui.EventUIModel
+import com.shuyu.github.kotlin.common.utils.CommonUtils
 
 /**
  * 事件相关实体转换

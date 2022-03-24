@@ -2,8 +2,7 @@ package com.gghub.api.restful.model.bean
 
 
 import com.google.gson.annotations.SerializedName
-
-import java.util.Date
+import java.util.*
 
 
 class CommitComment {

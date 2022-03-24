@@ -1,10 +1,12 @@
-import com.sophimp.plugin.Dep.SdkVersion
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import com.sophimp.plugin.Dep
+import com.sophimp.plugin.Dep.SdkVersion
 
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("com.apollographql.apollo3").version("3.1.0")
+//    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -17,6 +19,11 @@ android {
     defaultConfig {
         minSdk = SdkVersion.minSdkVersion
         targetSdk = SdkVersion.targetSdkVersion
+
+
+        val properties = gradleLocalProperties(rootDir)
+        buildConfigField("String", "CLIENT_ID", properties.getProperty("CLIENT_ID"))
+        buildConfigField("String", "CLIENT_SECRET", properties.getProperty("CLIENT_SECRET"))
     }
 
     buildTypes {
@@ -37,15 +44,16 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Dep.AndroidX.Compose.version
     }
-}
 
-apollo {
-    packageName.set("com.gghub.api")
+    apollo {
+        packageName.set("com.gghub.api")
 
-    // Alternatively, if you're migrating from 2.x, you can keep the 2.x
-    // behaviour with `packageNamesFromFilePaths()`:
+        // Alternatively, if you're migrating from 2.x, you can keep the 2.x
+        // behaviour with `packageNamesFromFilePaths()`:
 //    packageNamesFromFilePaths()
+    }
 }
+
 
 dependencies {
     implementation(Dep.AndroidX.annotation)

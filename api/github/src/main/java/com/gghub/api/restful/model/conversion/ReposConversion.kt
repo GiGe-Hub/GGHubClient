@@ -1,13 +1,12 @@
 package com.gghub.api.restful.model.conversion
 
 import android.content.Context
-import com.shuyu.github.kotlin.R
-import com.shuyu.github.kotlin.common.utils.CommonUtils
-import com.shuyu.github.kotlin.common.utils.HtmlUtils
+import com.gghub.api.R
 import com.gghub.api.restful.model.bean.*
 import com.gghub.api.restful.model.ui.FileUIModel
 import com.gghub.api.restful.model.ui.PushUIModel
 import com.gghub.api.restful.model.ui.ReposUIModel
+import com.shuyu.github.kotlin.common.utils.CommonUtils
 
 
 /**
@@ -112,9 +111,9 @@ object ReposConversion {
         fileUIModel.dir = filename
         fileUIModel.icon = "{GSY-REPOS_ITEM_FILE}"
 
-        val html = HtmlUtils.generateCode2HTml(context, HtmlUtils.parseDiffSource(commit.patch
-                ?: "", false), R.color.webDraculaBackgroundColor, "")
-        fileUIModel.patch = html
+//        val html = HtmlUtils.generateCode2HTml(context, HtmlUtils.parseDiffSource(commit.patch
+//                ?: "", false), R.color.webDraculaBackgroundColor, "")
+//        fileUIModel.patch = html
         return fileUIModel
     }
 }

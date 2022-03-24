@@ -1,10 +1,6 @@
 package com.gghub.api.restful.model.bean
 
 
-/**
- * Created by ThirtyDegreesRay on 2017/9/29 16:39:59
- */
-
 class UserInfoRequestModel {
     var blog: String? = null
     var name: String? = null

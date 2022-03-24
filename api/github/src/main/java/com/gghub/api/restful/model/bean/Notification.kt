@@ -5,8 +5,6 @@ import java.util.*
 
 /**
  * 通知相关
- * Created by guoshuyu
- * Date: 2018-11-12
  */
 class Notification {
     var id: String? = null

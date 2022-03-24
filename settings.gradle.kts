@@ -1,4 +1,3 @@
-includeBuild("./plugin")
 
 pluginManagement {
     repositories {
@@ -16,6 +15,7 @@ dependencyResolutionManagement {
     }
 }
 
+includeBuild("./plugin")
 
 include(":app")
 //include(":qmui")

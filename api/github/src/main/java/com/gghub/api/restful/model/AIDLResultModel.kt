@@ -3,10 +3,6 @@ package com.gghub.api.restful.model
 import android.os.Parcel
 import android.os.Parcelable
 
-/**
- * Created by guoshuyu
- * Date: 2018-11-28
- */
 class AIDLResultModel() : Parcelable {
 
     var name: String? = null

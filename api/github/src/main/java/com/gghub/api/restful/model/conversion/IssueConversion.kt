@@ -1,9 +1,9 @@
 package com.gghub.api.restful.model.conversion
 
-import com.shuyu.github.kotlin.common.utils.CommonUtils
 import com.gghub.api.restful.model.bean.Issue
 import com.gghub.api.restful.model.bean.IssueEvent
 import com.gghub.api.restful.model.ui.IssueUIModel
+import com.shuyu.github.kotlin.common.utils.CommonUtils
 
 /**
  * Issue相关实体转换

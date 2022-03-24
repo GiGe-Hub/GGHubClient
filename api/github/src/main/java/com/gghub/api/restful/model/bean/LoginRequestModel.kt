@@ -1,7 +1,7 @@
 package com.gghub.api.restful.model.bean
 
+import com.gghub.api.BuildConfig
 import com.google.gson.annotations.SerializedName
-import com.shuyu.github.kotlin.BuildConfig
 import java.util.*
 
 /**
@@ -25,7 +25,7 @@ class LoginRequestModel {
         fun generate(): LoginRequestModel {
             val model = LoginRequestModel()
             model.scopes = Arrays.asList("user", "repo", "gist", "notifications")
-            model.note = BuildConfig.APPLICATION_ID
+//            model.note = BuildConfig.APPLICATION_ID
             model.clientId = BuildConfig.CLIENT_ID
             model.clientSecret = BuildConfig.CLIENT_SECRET
             return model

@@ -1,12 +1,9 @@
 package com.gghub.api.restful.model.conversion
 
 import com.gghub.api.restful.model.bean.TrendingRepoModel
-import java.lang.Exception
 
 /**
  * Html String 到 趋势相关实体转换
- * Created by guoshuyu
- * Date: 2018-10-29
  */
 val TAGS = hashMapOf(
         Pair("meta", hashMapOf(Pair("start", "<span class=\"d-inline-block float-sm-right\""), Pair("flag", "/svg>"), Pair("end", "</span>end"))),
