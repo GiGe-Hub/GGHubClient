@@ -43,7 +43,7 @@ android {
 }
 
 dependencies {
-    api(project(":compose-core"))
-    api(Dep.AndroidX.Compose.activity)
-    api(Dep.AndroidX.Compose.pager)
+
+    implementation(Dep.ThirdLib.mmkv)
+
 }
