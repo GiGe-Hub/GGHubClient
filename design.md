@@ -23,11 +23,13 @@ Github + Gitee
 ### 首页
 
 - 默认标签
-    1. Following
-    2. explore
-    3. profile
+  1. Following
+  2. Explore
+  3. Profile
 
 - 侧拉菜单
+
+  点击头像的下接菜单
 
 - 标签可定制
 
@@ -39,4 +41,15 @@ Github, Gitee 切换
 
 首页 Following 的动态, 这个页面的信息量还是挺大的，前提是关注了一定的人数
 
-###
+### Explore
+
+单独放一个标签，我认为，发现项目，也是找灵感, 开阔视不错的一个方向
+
+Github 对分类有限制，这些也完全可以移到个人配置上来嘛
+
+要不要来投资一下呢？ 如果使用QT开发一个桌面版的又会怎么样呢？
+
+### Profile
+
+个人中心
+
