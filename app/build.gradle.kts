@@ -81,6 +81,7 @@ dependencies {
     implementation(Dep.AndroidX.annotation)
     implementation(Dep.Themes.material)
     implementation(Dep.AndroidX.Compose.constraintLayout)
+    implementation(Dep.AndroidX.Compose.pager)
 //    implementation(project(":lib"))
     implementation(Dep.Flipper.soLoader)
     implementation(Dep.Flipper.flipper)
