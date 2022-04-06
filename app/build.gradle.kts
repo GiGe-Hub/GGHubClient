@@ -95,6 +95,7 @@ dependencies {
     api(Dep.AndroidX.Compose.material)
     api(Dep.AndroidX.Compose.compiler)
     api(Dep.AndroidX.Compose.constraintLayout)
+    testImplementation("junit:junit:4.12")
 //    kapt(project(":compiler"))
 //    kapt(project(":arch-compiler"))
 

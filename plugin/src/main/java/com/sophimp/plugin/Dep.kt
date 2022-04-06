@@ -156,21 +156,20 @@ object Dep {
                 "androidx.constraintlayout:constraintlayout-compose:1.0.0"
             const val pager = "com.google.accompanist:accompanist-pager:0.24.0-alpha"
         }
-
-        object Test {
-            private const val version = "1.4.0"
-            const val core = "androidx.test:core:$version"
-            const val rules = "androidx.test:rules:$version"
-
-            object Ext {
-                private const val version = "1.1.2"
-                const val junit = "androidx.test.ext:junit-ktx:$version"
-            }
-
-            const val espressoCore = "androidx.test.espresso:espresso-core:3.3.0"
-        }
     }
 
+    object Test {
+        private const val version = "1.4.0"
+        const val core = "androidx.test:core:$version"
+        const val rules = "androidx.test:rules:$version"
+
+        object Ext {
+            private const val version = "1.1.2"
+            const val junit = "androidx.test.ext:junit-ktx:$version"
+        }
+
+        const val espressoCore = "androidx.test.espresso:espresso-core:3.3.0"
+    }
     object Stetho {
         private const val version = "1.5.0"
         const val stetho = "com.facebook.stetho:stetho:$version"
