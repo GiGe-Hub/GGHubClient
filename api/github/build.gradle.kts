@@ -5,7 +5,7 @@ import com.sophimp.plugin.Dep.SdkVersion
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("com.apollographql.apollo3").version("3.1.0")
+//    id("com.apollographql.apollo3").version("3.1.0")
 //    id("org.jetbrains.kotlin.kapt")
 }
 
@@ -45,13 +45,13 @@ android {
         kotlinCompilerExtensionVersion = Dep.AndroidX.Compose.version
     }
 
-    apollo {
-        packageName.set("com.gghub.api")
-
-        // Alternatively, if you're migrating from 2.x, you can keep the 2.x
-        // behaviour with `packageNamesFromFilePaths()`:
-//    packageNamesFromFilePaths()
-    }
+//    apollo {
+//        packageName.set("com.gghub.api")
+//
+//        // Alternatively, if you're migrating from 2.x, you can keep the 2.x
+//        // behaviour with `packageNamesFromFilePaths()`:
+////    packageNamesFromFilePaths()
+//    }
 }
 
 
