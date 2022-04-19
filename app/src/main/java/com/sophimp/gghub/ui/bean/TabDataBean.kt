@@ -22,7 +22,7 @@ data class TabDataBean(
 
 val homeTabs: List<TabDataBean> = listOf(
     TabDataBean(
-        R.string.following, R.mipmap.ic_following_activity, 0
+        R.string.following, R.drawable.ic_following, 0
     ) {
         FollowingActivitiesScreen()
     },
