@@ -1,6 +1,6 @@
 package com.sophimp.gghub.ui.bean
 
-data class PersonalInfo(
+data class PersonalUIBean(
     var name: String,
     var icon: String?,
     var des: String?,

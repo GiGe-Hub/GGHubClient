@@ -1,7 +1,10 @@
 package com.sophimp.gghub.ui.screen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Button
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -14,7 +17,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.sophimp.gghub.R
-import com.sophimp.gghub.ui.bean.PersonalInfo
+import com.sophimp.gghub.ui.bean.PersonalUIBean
+import com.sophimp.gghub.ui.bean.RepositoryUIBean
+import com.sophimp.gghub.ui.theme.FontSizeTitle
+import com.sophimp.gghub.ui.theme.PaddingStartEnd
 
 /**
  * create by sfx on 2022/3/30 13:39
@@ -25,41 +31,64 @@ fun ProfileScreen() {
         modifier = Modifier.fillMaxSize(),
     ) {
 
-        val personalInfo = PersonalInfo(
+        val personalInfo = PersonalUIBean(
             "张三", "", "Sophisticate & Simple",
             "songfangxi2012@163.com", "http://sophimp.github.io",
             39, 299
         )
         ProfileTopBar(personalInfo)
+        RepositoryCard(repositoryUIBean = RepositoryUIBean("rich-text", 6, "kotlin", "kotlin"))
     }
 }
 
 @Composable
-fun ProfileTopBar(personalInfo: PersonalInfo) {
+fun ButtonItemRect(name: String, iconRes: Int, count: Long) {
     Column(
         Modifier
-            .padding(12.dp, 0.dp, 12.dp, 0.dp)
+            .height(50.dp)
+            .fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(text = name, fontSize = FontSizeTitle)
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .wrapContentHeight(),
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Icon(painter = painterResource(id = iconRes), contentDescription = "")
+            Text(text = "$count")
+        }
+    }
+
+}
+
+@Composable
+fun ProfileTopBar(personalInfo: PersonalUIBean) {
+    Column(
+        Modifier
+            .padding(PaddingStartEnd, 0.dp, PaddingStartEnd, 0.dp)
             .fillMaxWidth()
             .wrapContentHeight()
     ) {
         Row(
             modifier = Modifier
                 .wrapContentHeight()
-                .padding(0.dp, 12.dp, 0.dp, 12.dp)
-                .fillMaxWidth()
+                .padding(0.dp, PaddingStartEnd, 0.dp, PaddingStartEnd)
+                .fillMaxWidth(),
         ) {
             Image(
                 painter = painterResource(id = R.mipmap.ic_launcher),
                 modifier = Modifier
-                    .width(60.dp)
-                    .height(60.dp),
+                    .width(68.dp)
+                    .height(68.dp),
                 contentDescription = ""
             )
 
             Column(
                 Modifier
                     .weight(1f)
-                    .height(60.dp)
+                    .wrapContentHeight()
                     .padding(8.dp, 0.dp, 0.dp, 0.dp)
                     .wrapContentHeight(),
                 verticalArrangement = Arrangement.Center
@@ -71,34 +100,59 @@ fun ProfileTopBar(personalInfo: PersonalInfo) {
                     fontSize = 13.sp,
                     color = Color.Gray
                 )
+                Button(
+                    onClick = {},
+                    Modifier.padding(0.dp, 5.dp, 0.dp, 0.dp),
+                ) {
+                    Text(text = "Follow")
+                }
             }
-            Row(
+            Column(
                 Modifier
                     .weight(0.818f)
-                    .height(60.dp),
-                verticalAlignment = Alignment.CenterVertically
+                    .wrapContentHeight()
             ) {
                 Column(
                     Modifier
-                        .weight(1f)
+                        .fillMaxWidth()
                         .wrapContentHeight(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(text = "followers")
+                    Row(Modifier.fillMaxWidth()) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.ic_follower),
+                            contentDescription = ""
+                        )
+                        Text(
+                            text = "followers", maxLines = 1,
+                            modifier = Modifier.padding(3.dp, 0.dp, 0.dp, 0.dp)
+                        )
+                    }
                     Text(text = "${personalInfo.followers}", fontSize = 16.sp)
                 }
                 Column(
                     Modifier
-                        .padding(5.dp, 0.dp, 0.dp, 0.dp)
                         .wrapContentHeight()
-                        .weight(1f),
+                        .fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(text = "following")
+                    Row(Modifier.fillMaxWidth()) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.ic_following),
+                            contentDescription = ""
+                        )
+                        Text(
+                            text = "following",
+                            maxLines = 1,
+                            modifier = Modifier.padding(3.dp, 0.dp, 0.dp, 0.dp)
+                        )
+                    }
                     Text(text = "${personalInfo.followings}", fontSize = 16.sp)
                 }
             }
         }
+
+        Text(text = "Sophisticate & Simple")
 
         Row(
             Modifier
@@ -203,6 +257,57 @@ fun ProfileTopBar(personalInfo: PersonalInfo) {
             }
         }
     }
+}
+
+@Composable
+fun RepositoryCard(repositoryUIBean: RepositoryUIBean) {
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .wrapContentHeight()
+    ) {
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .wrapContentHeight()
+        ) {
+            Icon(painter = painterResource(id = R.drawable.ic_repo), contentDescription = "repo")
+            Text(text = repositoryUIBean.name)
+        }
+        Text(
+            text = repositoryUIBean.description,
+            Modifier
+                .fillMaxWidth()
+                .wrapContentHeight()
+        )
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .wrapContentHeight()
+        ) {
+            Box(
+                modifier = Modifier
+                    .width(5.dp)
+                    .height(5.dp)
+                    .background(color = Color.Blue, shape = CircleShape)
+            )
+            Text(text = repositoryUIBean.language ?: "", modifier = Modifier
+                .wrapContentWidth()
+                .wrapContentHeight())
+
+            Box(
+                modifier = Modifier
+                    .width(5.dp)
+                    .height(5.dp)
+                    .background(color = Color.Blue, shape = CircleShape)
+            )
+            Text(text = "${repositoryUIBean.stars}" ?: "", modifier = Modifier
+                .wrapContentWidth()
+                .wrapContentHeight())
+
+        }
+    }
+
 }
 
 @Composable
