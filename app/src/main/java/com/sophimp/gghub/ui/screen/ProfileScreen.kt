@@ -1,8 +1,14 @@
+@file:OptIn(ExperimentalFoundationApi::class)
+
 package com.sophimp.gghub.ui.screen
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.GridCells
+import androidx.compose.foundation.lazy.GridItemSpan
+import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Button
 import androidx.compose.material.Icon
@@ -11,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -21,6 +28,7 @@ import com.sophimp.gghub.ui.bean.PersonalUIBean
 import com.sophimp.gghub.ui.bean.RepositoryUIBean
 import com.sophimp.gghub.ui.theme.FontSizeTitle
 import com.sophimp.gghub.ui.theme.PaddingStartEnd
+import com.sophimp.gghub.ui.widget.RepositoryCard
 
 /**
  * create by sfx on 2022/3/30 13:39
@@ -37,7 +45,31 @@ fun ProfileScreen() {
             39, 299
         )
         ProfileTopBar(personalInfo)
-        RepositoryCard(repositoryUIBean = RepositoryUIBean("rich-text", 6, "kotlin", "kotlin"))
+
+        LazyVerticalGrid(cells = GridCells.Fixed(2), content = {
+            item {
+                RepositoryCard(
+                    repositoryUIBean = RepositoryUIBean(
+                        "rich-text",
+                        6,
+                        "kotlin",
+                        "kotlin"
+                    )
+                )
+            }
+            item {
+                RepositoryCard(
+                    repositoryUIBean = RepositoryUIBean(
+                        "rich-text",
+                        6,
+                        "kotlin",
+                        "kotlin"
+                    )
+                )
+            }
+        })
+
+
     }
 }
 
@@ -257,57 +289,6 @@ fun ProfileTopBar(personalInfo: PersonalUIBean) {
             }
         }
     }
-}
-
-@Composable
-fun RepositoryCard(repositoryUIBean: RepositoryUIBean) {
-    Column(
-        Modifier
-            .fillMaxWidth()
-            .wrapContentHeight()
-    ) {
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .wrapContentHeight()
-        ) {
-            Icon(painter = painterResource(id = R.drawable.ic_repo), contentDescription = "repo")
-            Text(text = repositoryUIBean.name)
-        }
-        Text(
-            text = repositoryUIBean.description,
-            Modifier
-                .fillMaxWidth()
-                .wrapContentHeight()
-        )
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .wrapContentHeight()
-        ) {
-            Box(
-                modifier = Modifier
-                    .width(5.dp)
-                    .height(5.dp)
-                    .background(color = Color.Blue, shape = CircleShape)
-            )
-            Text(text = repositoryUIBean.language ?: "", modifier = Modifier
-                .wrapContentWidth()
-                .wrapContentHeight())
-
-            Box(
-                modifier = Modifier
-                    .width(5.dp)
-                    .height(5.dp)
-                    .background(color = Color.Blue, shape = CircleShape)
-            )
-            Text(text = "${repositoryUIBean.stars}" ?: "", modifier = Modifier
-                .wrapContentWidth()
-                .wrapContentHeight())
-
-        }
-    }
-
 }
 
 @Composable
