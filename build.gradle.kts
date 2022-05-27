@@ -1,12 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 import com.sophimp.plugin.Dep
+
 buildscript {
-    repositories {
-        mavenCentral()
-        google()
-        maven(url = "https://mvnrepository.com")
-        mavenLocal()
-    }
+
     dependencies {
         classpath("com.android.tools.build:gradle:7.1.2")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
@@ -25,12 +21,3 @@ plugins {
 subprojects {
     group = Dep.DepPlug.group
 }
-
-//allprojects {
-//    repositories {
-//        mavenCentral()
-//        maven(url = "https://mvnrepository.com")
-//        google()
-//        mavenLocal()
-//    }
-//}

@@ -1,0 +1,124 @@
+apply plugin: 'com.android.component'
+
+component {
+
+    //注意：下面使用到的模块命等同于 setting 中申明的模块名，严格遵守规范
+    //申明插件的作用域，用于有 include 和 exclude
+    //生效的模块会自动添加组件依赖 core，可使用 component(:{projectName}) 使用其他组件提供的sdk，同时可在 componentSdks 中配置自己模块暴露的sdk
+//    exclude 'xxxx'
+
+//    exclude ':libs:base', 'libs:net'
+    // 这里include 的是 下面sdk中定义的component 名称, 不跟setting.gralde 中完全一样
+    include ':app', ':debugEntry',
+            ':explore',
+            ':mine',
+            ':account'
+
+
+    //组件sdk声明，从生效的模块中命中以下配置之后，会自动为模块生成sdk
+    sdk {
+
+        //编译版本
+        compileSdkVersion 28
+
+        //java编译版本
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
+        configuration {
+
+            //组件层申明
+            'explore' {
+                groupId 'com.sophimp.component'
+                artifactId 'explore'
+                dependencies {
+                    implementation deps.androidx.appCompat
+                    implementation deps.androidx.recyclerview
+                    implementation deps.kotlin.stdlib
+                    implementation deps.gson
+                }
+            }
+
+            'account' {
+                groupId 'com.sophimp.service'
+                artifactId 'account'
+                dependencies {
+                    implementation deps.androidx.appCompat
+                    implementation deps.kotlin.stdlib
+                }
+            }
+
+            'mine' {
+                groupId 'com.sophimp.component'
+                artifactId 'mine'
+                dependencies {
+                    implementation deps.androidx.appCompat
+                    implementation deps.kotlin.stdlib
+                }
+            }
+        }
+    }
+
+
+    //组件调试声明
+    debug {
+
+        //调试模块，随意在当前项目新建一个module用于调试即可
+        targetModuleName 'debugEntry'
+
+        //申明调试模块运行时链接组件的资源，表明运行 debugModule 时使用目录资源
+        targetDebugName 'cMine'
+
+        configuration {
+
+            //component 调试
+            'cExplore' {
+                dependencies {
+                    implementation component(':component:explore')
+                }
+            }
+
+            'cMine' {
+                dependencies {
+                    implementation component(':component:mine')
+                }
+            }
+
+            //service 调试
+            'sAccount' {
+                dependencies {
+                    implementation component(':service:account')
+                }
+            }
+
+            //library 调试
+            'lBase' {
+                dependencies {
+                    implementation project(':libs:base')
+                }
+            }
+
+            'lNet' {
+                dependencies {
+                    implementation project(':libs:net')
+                }
+            }
+
+            //自定义 调试
+            'template' {
+                dependencies {
+//                    implementation project(':libs:base')
+                }
+            }
+        }
+    }
+}
+
+
+tasks.whenTaskAdded { task ->
+    if (task.name.contains('AndroidTest') || task.name.contains('Test')) {
+        task.enabled = false
+    }
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="dialog_error_send_report">Send error report</string>
+
+    <!-- Preferences -->
+    <string name="preference_file_key" translatable="false">com.manichord.mgit</string>
+    <string name="preference_repo_location">Root storage location for repos</string>
+    <string name="pref_category_title_general">General</string>
+    <string name="pref_key_repo_root_location" translatable="false">repo_root_path</string>
+    <string name="action_select_root_dir">Select as Root folder</string>
+    <string name="action_create_new_dir">Create new folder</string>
+    <string name="pref_category_title_git_profile">Git Profile</string>
+    <string name="pref_key_git_user_name" translatable="false">user.name</string>
+    <string name="preference_git_user_name">User Name</string>
+    <string name="pref_key_git_user_email" translatable="false">user.email</string>
+    <string name="preference_git_user_email">User Email</string>
+    <string name="pref_category_title_about">About</string>
+    <string name="preference_send_feedback">Feedback</string>
+    <string name="preference_send_feedback_summary">Submit feedback by creating a new issue on GitHub</string>
+    <string name="preference_key_app_version" translatable="false">app_version</string>
+    <string name="preference_app_version">Version</string>
+    <string name="preference_manage_ssh_keys_summary">Manage SSH Keys</string>
+    <string name="preference_manage_ssh_keys">SSH Keys</string>
+    <string name="preference_use_gravatar">Use gravatar images</string>
+    <string name="preference_use_gravatar_summary">Load avatar images from gravatar.com</string>
+    <string name="pref_key_use_gravatar" translatable="false">use.gravatar</string>
+    <string name="pref_category_title_security">Security</string>
+    <string name="preference_use_theme">Select Colour Theme</string>
+    <string name="pref_key_use_theme_id" translatable="false">color_theme_id</string>
+    <string name="action_git_profile">Git Profile</string>
+    <string name="action_open_in_other_app">Open in other apps</string>
+    <string name="action_add_private_key">Add Private Key</string>
+
+    <!-- Crash reporting via ACRA -->
+    <string name="crash_toast_text">MGit error - gathering data to email a crash report</string>
+    <string name="crash_report_email" translatable="false">mgit@manichord.com</string>
+
+    <!-- Intent filters -->
+    <string name="cloning">Cloning … </string>
+    <string name="importing">Importing … </string>
+    <string name="clone_with_mgit">Clone with MGit</string>
+    <string name="invalid_url">Invalid URL!</string>
+    <string name="https" translatable="false">https</string>
+    <string name="http" translatable="false">http</string>
+    <string name="initialising">Initialising … </string>
+    <string name="git" translatable="false">git</string>
+    <string name="git_extension" translatable="false">.git</string>
+    <string name="ending_with_git" translatable="false">.*\\.git</string>
+    <string name="ssh" translatable="false">ssh</string>
+    <string name="github.com" translatable="false">github.com</string>
+    <string name="gitlab.com" translatable="false">gitlab.com</string>
+    <string name="bitbucket.com" translatable="false">bitbucket.com</string>
+    <string name="notabug.org" translatable="false">notabug.org</string>
+    <string name="repository_already_present">Repository already present!</string>
+    <string name="error_no_worktree">This is a bare repository!</string>
+    <string name="error_invalid_index">The Git index is invalid!</string>
+    <string name="error_file_not_found">File not found!</string>
+    <string name="preference_eng_lang">English Language</string>
+    <string name="preference_eng_lang_summary">Use English instead of the default language</string>
+    <string name="pref_key_use_english" translatable="false">use.english</string>
+</resources>
