@@ -69,8 +69,8 @@ dependencies {
     api(Dep.AndroidX.CommonLib.appCompat)
     api(Dep.AndroidX.coreKtx)
     api(Dep.Themes.material)
-    api(Dep.AndroidX.VectorDrawable.vectorDrawable)
-    api(Dep.AndroidX.VectorDrawable.vectorDrawableAnimation)
+//    api(Dep.AndroidX.VectorDrawable.vectorDrawable)
+//    api(Dep.AndroidX.VectorDrawable.vectorDrawableAnimation)
 
 //    implementation(Dep.ThirdLib.jsch)
 //    implementation(Dep.ThirdLib.commonIO)

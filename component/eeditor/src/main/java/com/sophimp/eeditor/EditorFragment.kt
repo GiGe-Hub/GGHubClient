@@ -3,7 +3,7 @@ package com.sophimp.eeditor
 import android.os.Bundle
 import android.view.View
 import com.sophimp.base.BaseFragment
-import fake.`package`.name.`for`.sync.databinding.FragmentEditorBinding
+import com.sophimp.eeditor.databinding.FragmentEditorBinding
 
 /**
  *
