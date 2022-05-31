@@ -113,8 +113,9 @@ object Dep {
         }
 
         object CommonLib {
-            private const val appcompat_version = "1.4.0"
+            private const val appcompat_version = "1.4.1"
             const val appCompat = "androidx.appcompat:appcompat:$appcompat_version"
+            const val appCompatResource = "androidx.appcompat:appcompat-resources:$appcompat_version"
             const val fragment = "androidx.fragment:fragment:${appcompat_version}"
             const val activity = "androidx.activity:activity-ktx:${appcompat_version}"
             const val recyclerView = "androidx.recyclerview:recyclerview:1.2.1"

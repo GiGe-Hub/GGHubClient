@@ -12,9 +12,9 @@ plugins {
 android {
     compileSdk = SdkVersion.compileSdkVersion
 
-    buildFeatures {
-        compose = true
-    }
+//    buildFeatures {
+//        compose = true
+//    }
 
     defaultConfig {
         minSdk = SdkVersion.minSdkVersion
@@ -41,9 +41,9 @@ android {
         jvmTarget = SdkVersion.kotlinJvmTarget
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = Dep.AndroidX.Compose.version
-    }
+//    composeOptions {
+//        kotlinCompilerExtensionVersion = Dep.AndroidX.Compose.version
+//    }
 
 //    apollo {
 //        packageName.set("com.gghub.api")

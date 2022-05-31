@@ -17,7 +17,7 @@ class MainViewModel @Inject constructor(): ViewModel() {
 
     fun initDefaultTabItems() {
         val defItems = mutableListOf<HomeBottomTab>()
-        defItems.add(HomeBottomTab.GithubItem)
+//        defItems.add(HomeBottomTab.GithubItem)
         defItems.add(HomeBottomTab.WorkspaceItem)
         defItems.add(HomeBottomTab.MineItem)
 //        tabItems.postValue(defItems)

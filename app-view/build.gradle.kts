@@ -47,21 +47,20 @@ android {
         shaders = false
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = Dep.AndroidX.Compose.version
-    }
+//    composeOptions {
+//        kotlinCompilerExtensionVersion = Dep.AndroidX.Compose.version
+//    }
 
     defaultConfig {
         applicationId = "com.sophimp.gghub"
         minSdk = Dep.SdkVersion.minSdkVersion
         targetSdk = Dep.SdkVersion.targetSdkVersion
-//        versionCode = gitVersion
         versionCode = Dep.SdkVersion.versionCode
         versionName = Dep.DepPlug.depPlugVer
 
-        ndk {
-            abiFilters.add("arm64-v8a")
-        }
+//        ndk {
+//            abiFilters.add("arm64-v8a")
+//        }
     }
     buildTypes {
         getByName("release") {
@@ -76,9 +75,6 @@ android {
 }
 
 dependencies {
-    implementation(Dep.AndroidX.CommonLib.appCompat)
-    implementation(Dep.AndroidX.annotation)
-    implementation(Dep.Themes.material)
 
     implementation(Dep.Kotlin.stdlib)
     implementation(Dep.AndroidX.coreKtx)

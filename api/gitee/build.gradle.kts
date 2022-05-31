@@ -28,9 +28,9 @@ android {
         jvmTarget = SdkVersion.kotlinJvmTarget
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = Dep.AndroidX.Compose.version
-    }
+//    composeOptions {
+//        kotlinCompilerExtensionVersion = Dep.AndroidX.Compose.version
+//    }
 }
 
 dependencies {

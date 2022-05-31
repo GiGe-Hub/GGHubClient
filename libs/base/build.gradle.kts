@@ -61,6 +61,10 @@ android {
 
 dependencies {
 
+    api(Dep.AndroidX.CommonLib.appCompat)
+    api(Dep.AndroidX.annotation)
+    api(Dep.Themes.material)
+
     api(Dep.TabLayout.dslAdapter)
 
     api(Dep.Timber.timber)

@@ -41,7 +41,7 @@ class MainHomeActivity : BaseTitleActivity<ActivityMainHomeBinding>() {
             tabEnableGradientColor = true
             tabEnableTextBold = true
             tabEnableGradientScale = true
-            tabSelectColor = resources.getColor(R.color.colorPrimary)
+            tabSelectColor = resources.getColor(com.sophimp.lib.base.R.color.colorPrimary)
             tabMaxScale = 1.0f
             // select listener
             onSelectItemView = { itemView, index, select, fromUser ->
@@ -63,12 +63,12 @@ class MainHomeActivity : BaseTitleActivity<ActivityMainHomeBinding>() {
 
     private fun initBottomItem(itemBind: BottomTabItemBinding, itemTab: HomeBottomTab) {
         when (itemTab) {
-            HomeBottomTab.GithubItem -> {
-                HomeBottomTab.GithubItem.apply {
-                    itemBind.ivBottomTabIcon.setImageResource(iconResId)
-                    itemBind.tvTabName.setText(nameRes)
-                }
-            }
+//            HomeBottomTab.GithubItem -> {
+//                HomeBottomTab.GithubItem.apply {
+//                    itemBind.ivBottomTabIcon.setImageResource(iconResId)
+//                    itemBind.tvTabName.setText(nameRes)
+//                }
+//            }
             HomeBottomTab.WorkspaceItem -> {
                 HomeBottomTab.WorkspaceItem.apply {
                     itemBind.ivBottomTabIcon.setImageResource(iconResId)
