@@ -61,22 +61,13 @@ android {
 
 dependencies {
 
-    api(Dep.TabLayout.dslAdapter)
-
-    api(Dep.Timber.timber)
-    api(Dep.ThirdLib.mmkv)
-    api(Dep.AndroidX.swipeRefreshLayout)
-    api(Dep.AndroidX.CommonLib.appCompat)
-    api(Dep.AndroidX.coreKtx)
-    api(Dep.Themes.material)
-    api(Dep.AndroidX.VectorDrawable.vectorDrawable)
-    api(Dep.AndroidX.VectorDrawable.vectorDrawableAnimation)
-
 //    implementation(Dep.ThirdLib.jsch)
 //    implementation(Dep.ThirdLib.commonIO)
 //    implementation Libs.ThirdLib.jgit
     implementation(Dep.Glide.glide)
     implementation(Dep.Glide.glideProcessor)
+
+    implementation(project(":libs:base"))
 //    implementation(Dep.ThirdLib.conscrypt)
 
 //    implementation(Dep.Acra.acraMail)

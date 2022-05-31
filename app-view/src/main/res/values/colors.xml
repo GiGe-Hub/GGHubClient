@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_primary_color">#f4f4f4</color>
+    <color name="bg_sub_color">#dedede</color>
+    <color name="border_primary_color">#dcdde2</color>
+    <color name="border_sub_color">#e7e8ec</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="error">#ff4d3f</color>
+    <color name="fairly">#c3c9cf</color>
+    <color name="info">#4b7efe</color>
+    <color name="lib_bg_press">#20000000</color>
+    <color name="lib_black">#000000</color>
+    <color name="lib_disable_bg_color">#C9CACC</color>
+    <color name="lib_icon_dark_color">#5C5D5E</color>
+    <color name="lib_image_placeholder_color">#474849</color>
+    <color name="lib_line">#D5D5D5</color>
+    <color name="lib_line_dark">#E1E2E6</color>
+    <color name="lib_status_bar_dim">#20000000</color>
+    <color name="lib_tran_dark">#80000000</color>
+    <color name="lib_white">#FFFFFF</color>
+    <color name="lib_white_dark">#F5F5F5</color>
+    <color name="lib_white_press">#E0E0E0</color>
+    <color name="success">#44CB5C</color>
+    <color name="text_general_color">#182334</color>
+    <color name="text_place_color">#aab1bd</color>
+    <color name="text_primary_color">#161B26</color>
+    <color name="text_sub_color">#ACAFB7</color>
+</resources>

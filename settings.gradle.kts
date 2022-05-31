@@ -29,7 +29,8 @@ dependencyResolutionManagement {
 
 includeBuild("./plugin")
 
-include(":app")
+//include(":app-compose")
+include(":app-view")
 //include(":qmui")
 //include(":lib")
 //include(":compiler")
@@ -44,3 +45,5 @@ include(":app")
 include(":libs:base")
 include(":api:github")
 include(":api:gitee")
+include(":component:eeditor")
+include(":component:mine")
