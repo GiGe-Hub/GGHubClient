@@ -91,6 +91,7 @@ dependencies {
 
     implementation(project(":libs:base"))
     implementation(project(":component:eeditor"))
+    implementation(project(":component:mine"))
 //    implementation project(":libs:widget")
 //    implementation project(":libs:github")
 //    implementation project(":component:md-editor")
