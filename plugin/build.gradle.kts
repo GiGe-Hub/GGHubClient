@@ -1,22 +1,26 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
-    `java-gradle-plugin`
-    idea
-    kotlin("jvm") version "1.6.10"
+//    `java-gradle-plugin`
+//    idea
+//    kotlin("jvm") version "1.6.10"
     `kotlin-dsl`
 }
 
 buildscript {
     repositories {
+        maven(url = "https://maven.aliyun.com/repository/public")
+        maven(url = "https://maven.aliyun.com/repository/jcenter")
+        maven(url = "https://maven.aliyun.com/repository/google")
+        maven(url = "https://maven.aliyun.com/repository/gradle-plugin")
         mavenCentral()
         google()
         mavenLocal()
     }
 
-    dependencies {
-        classpath("com.android.tools.build:gradle:7.1.2")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
-    }
+//    dependencies {
+//        classpath("com.android.tools.build:gradle:7.1.2")
+//        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
+//    }
 }
 
 group = "com.sophimp.plugin"
@@ -30,10 +34,10 @@ gradlePlugin {
             implementationClass = "com.sophimp.plugin.SSDepPlugin"
         }
 
-        create("sophimp-publish"){
-            id = "sophimp-publish"
-            implementationClass = "com.sophimp.plugin.SSPublish"
-        }
+//        create("sophimp-publish"){
+//            id = "sophimp-publish"
+//            implementationClass = "com.sophimp.plugin.SSPublish"
+//        }
     }
 }
 
@@ -43,12 +47,12 @@ repositories {
 }
 
 dependencies {
-    api(gradleApi())
-    api(gradleKotlinDsl())
-    api(kotlin("gradle-plugin", version = "1.6.10"))
-    api(kotlin("gradle-plugin-api", version = "1.6.10"))
-    api("com.android.tools.build:gradle-api:7.1.2")
-    api("com.android.tools.build:gradle:7.1.2")
+//    api(gradleApi())
+//    api(gradleKotlinDsl())
+//    api(kotlin("gradle-plugin", version = "1.6.10"))
+//    api(kotlin("gradle-plugin-api", version = "1.6.10"))
+//    api("com.android.tools.build:gradle-api:7.1.2")
+//    api("com.android.tools.build:gradle:7.1.2")
 //    implementation(kotlin("stdlib-jdk8"))
 }
 

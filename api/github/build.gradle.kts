@@ -63,8 +63,8 @@ dependencies {
     implementation(Dep.Square.retrofit)
     implementation(Dep.Square.retrofitConverterGson)
 
-    implementation(Dep.Apollo.apolloRuntime)
-    implementation(Dep.Apollo.apolloApi)
+//    implementation(Dep.Apollo.apolloRuntime)
+//    implementation(Dep.Apollo.apolloApi)
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
