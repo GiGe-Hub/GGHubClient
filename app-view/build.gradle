@@ -1,0 +1,78 @@
+import com.sophimp.plugin.Libs
+import com.sophimp.plugin.SdkVersion
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    compileSdkVersion SdkVersion.compileSdkVersion
+    buildToolsVersion SdkVersion.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.sophimp.gghub"
+        minSdkVersion SdkVersion.minSdkVersion
+        targetSdkVersion SdkVersion.targetSdkVersion
+        versionCode SdkVersion.versionCode
+        versionName SdkVersion.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    viewBinding {
+        enabled true
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        // Disable unused AGP features
+        buildConfig true
+        aidl false
+        renderScript false
+        resValues false
+        shaders false
+    }
+}
+dependencies {
+
+    implementation Libs.Kotlin.stdlib
+    implementation Libs.AndroidX.coreKtx
+    implementation Libs.Themes.material
+    implementation Libs.AndroidX.CmdUI.constraintLayout
+    implementation Libs.TabLayout.tabLayout
+    implementation Libs.TabLayout.dslAdapter
+
+    implementation Libs.Timber.timber
+
+    implementation project(":libs:base")
+//    implementation project(":libs:widget")
+//    implementation project(":libs:github")
+    implementation project(":component:eeditor")
+//    implementation project(":component:explore")
+//    implementation project(":component:github")
+    implementation project(":component:mine")
+
+    implementation Libs.Dagger2.hiltAndroid
+    kapt Libs.Dagger2.hiltCompiler
+
+//    testImplementation 'junit:junit:4.+'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}

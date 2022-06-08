@@ -1,0 +1,25 @@
+import com.sophimp.plugin.Libs
+plugins {
+//    id "kotlin-kapt"
+    id("com.google.devtools.ksp") version "1.6.10-1.0.2"
+}
+
+apply from: rootProject.file("./gradleScript/commonLib.gradle")
+
+android {
+    kotlin {
+        sourceSets.debug {
+            kotlin.srcDir("build/generated/ksp/debug/kotlin")
+        }
+    }
+}
+dependencies {
+    implementation Libs.ThirdLib.okhttp
+    implementation Libs.RxHttp.rxhttp
+    // ksp/kapt/annotationProcessor choose one
+    ksp Libs.RxHttp.rxhttpCompiler
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+//    testImplementation 'junit:junit:4.+'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}

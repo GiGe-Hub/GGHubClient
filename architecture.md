@@ -6,6 +6,8 @@
 
 - Compose UI
 
+待稳定后再研究，这仅仅是对个人技术增长而言
+
 - Room
 
 - WorkManager

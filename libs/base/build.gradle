@@ -1,0 +1,39 @@
+import com.sophimp.plugin.Libs
+
+//apply plugin: 'dagger.hilt.android.plugin'
+
+apply from:rootProject.file("./gradleScript/commonLib.gradle")
+
+dependencies {
+
+    implementation Libs.TabLayout.dslAdapter
+
+    api Libs.Timber.timber
+    api Libs.ThirdLib.mmkv
+    api Libs.AndroidX.swipeRefreshLayout
+
+    implementation Libs.ThirdLib.jsch
+    implementation Libs.ThirdLib.commonIO
+//    implementation Libs.ThirdLib.jgit
+    implementation Libs.Glide.glide
+    implementation Libs.Glide.glideProcessor
+    implementation Libs.ThirdLib.conscrypt
+
+    implementation Libs.Acra.acraMail
+    implementation Libs.Acra.acraDialog
+
+    //dagger依赖注入
+//    api Libs.Dagger2.dagger2
+//    kapt Libs.Dagger2.dagger2Compiler
+//    kapt Libs.Dagger2.dagger2AnnotationProcessor
+
+//    api Libs.Dagger2.hiltAndroid
+//    kapt Libs.Dagger2.hiltCompiler
+
+    debugImplementation Libs.Stetho.stetho
+    debugImplementation Libs.Stetho.stethoTimber
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+//    testImplementation 'junit:junit:4.+'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
