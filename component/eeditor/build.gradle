@@ -2,4 +2,5 @@ apply from: rootProject.file("gradleScript/commonLib.gradle")
 
 dependencies {
     implementation project(':libs:base')
+    implementation "io.noties.markwon:core:4.6.2"
 }
