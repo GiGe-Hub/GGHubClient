@@ -77,6 +77,8 @@ object Libs {
         const val okhttp = "com.squareup.okhttp3:okhttp:4.9.1"
 
         const val autoAccess = "com.neenbedankt.gradle.plugins:android-apt:1.8"
+
+        const val multiTypes = "com.drakeet.multitype:multitype:4.3.0"
     }
     object AndroidX {
         const val coreKtx = "androidx.core:core-ktx:1.5.0"

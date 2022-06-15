@@ -4,11 +4,9 @@
     android:background="@android:color/black"
     android:layout_height="match_parent">
 
-    <EditText
+    <com.sophimp.eeditor.ExEditor
+        android:id="@+id/eeditor"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white"
-        android:hint="富文本编辑" />
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
