@@ -11,7 +11,7 @@
     <color name="fairly">#c3c9cf</color>
     <color name="info">#4b7efe</color>
     <color name="lib_bg_press">#20000000</color>
-    <color name="lib_black">#000000</color>
+    <color name="black">#000000</color>
     <color name="lib_disable_bg_color">#C9CACC</color>
     <color name="lib_icon_dark_color">#5C5D5E</color>
     <color name="lib_image_placeholder_color">#474849</color>

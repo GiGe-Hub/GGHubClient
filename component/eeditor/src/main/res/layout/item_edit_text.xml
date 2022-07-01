@@ -2,7 +2,7 @@
 <EditText xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/etItem"
     android:textSize="14sp"
-    android:textColor="@color/lib_white"
+    android:textColor="@color/black"
     android:background="@null"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">

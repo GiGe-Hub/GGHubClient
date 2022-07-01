@@ -57,6 +57,7 @@ class MainHomeActivity : BaseTitleActivity<ActivityMainHomeBinding>() {
 
 //        baseViewHolder.v<DslTabLayout>(R.id.jumpToEnd)
 
+        _binding.vp2Home.isUserInputEnabled = false
         _binding.vp2Home.adapter = HomePagerAdapter(fragments, this)
 
     }
