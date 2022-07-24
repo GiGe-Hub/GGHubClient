@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/lib_half_black_transparent"
+    android:layout_width="match_parent"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvTabName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="名字："
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/common_item_height" />
+
+    <EditText
+        android:id="@+id/etName"
+        app:layout_constraintStart_toEndOf="@id/tvTabName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvTabName"
+        android:background="@null"
+        android:layout_width="0dp"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:id="@+id/tvTabScore"
+        app:layout_constraintTop_toBottomOf="@id/tvTabName"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="分值："
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/common_item_height" />
+
+    <EditText
+        android:id="@+id/etScore"
+        app:layout_constraintStart_toEndOf="@id/tvTabScore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvTabScore"
+        android:background="@null"
+        android:layout_width="0dp"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:id="@+id/tvTabIcon"
+        app:layout_constraintTop_toBottomOf="@id/tvTabScore"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="图标"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/common_item_height" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
