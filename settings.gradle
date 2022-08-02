@@ -47,4 +47,4 @@ include ":api:github"
 include ":api:gitee"
 include ":component:eeditor"
 include ":component:mine"
-include ':app-view:award'
+include ':award'

@@ -115,8 +115,60 @@ object Libs {
         }
 
         object Jetpack {
-            const val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:2.2.0"
-            const val lifecycleCompiler = "androidx.lifecycle:lifecycle-compiler:2.4.0"
+            const val lifecycle_version = "2.5.0"
+
+            // ViewModel
+//            implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+            const val lifecycle_viewModel =
+                "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+            const val arch_version = "2.1.0"
+
+            // LiveData
+//            implementation("androidx.lifecycle:lifecycle-livedata:$lifecycle_version")
+            const val lifecycle_livedata =
+                "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+
+            // Lifecycles only (without ViewModel or LiveData)
+//            implementation("androidx.lifecycle:lifecycle-runtime:$lifecycle_version")
+
+            // Saved state module for ViewModel
+//            implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version")
+            const val lifecycle_viewmodel_savestate =
+                "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+
+            // Annotation processor
+//            annotationProcessor("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
+            const val lifecycle_compiler =
+                "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+            // alternately - if using Java8, use the following instead of lifecycle-compiler
+//            implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycle_version")
+            const val lifecycle_common_java8 =
+                "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+            // optional - helpers for implementing LifecycleOwner in a Service
+//            implementation("androidx.lifecycle:lifecycle-service:$lifecycle_version")
+            const val lifecycle_service = "androidx.lifecycle:lifecycle-service:$lifecycle_version"
+
+            // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
+//            implementation("androidx.lifecycle:lifecycle-process:$lifecycle_version")
+
+            // optional - ReactiveStreams support for LiveData
+//            implementation("androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version")
+
+            // optional - Test helpers for LiveData
+//            testImplementation("androidx.arch.core:core-testing:$arch_version")
+            const val livedata_test = "androidx.arch.core:core-testing:$arch_version"
+
+            // optional - Test helpers for Lifecycle runtime
+//            testImplementation("androidx.lifecycle:lifecycle-runtime-testing:$lifecycle_version")
+            const val lifecycle_runtime_test =
+                "androidx.lifecycle:lifecycle-runtime-testing:$lifecycle_version"
+
+            const val activityKtx = "androidx.activity:activity-ktx:1.5.0"
+
+            const val fragmentKtx = "androidx.fragment:fragment-ktx:1.5.0"
 
         }
 
@@ -180,8 +232,8 @@ object Libs {
     }
 
     object TabLayout {
-        const val dslAdapter = "com.github.angcyo:DslAdapter:3.0.2"
-        const val tabLayout = "com.github.angcyo.DslTablayout:TabLayout:3.0.3"
+        const val dslAdapter = "com.github.angcyo:DslAdapter:4.4.0"
+        const val tabLayout = "com.github.angcyo.DslTablayout:TabLayout:3.2.4"
     }
 
     object RxHttp {

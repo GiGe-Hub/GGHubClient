@@ -1,29 +1,25 @@
 package com.sophimp.ghub.app.activity
 
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.angcyo.tablayout.DslTabLayout
 import com.sophimp.base.BaseTitleActivity
-import com.sophimp.ghub.app.R
 import com.sophimp.ghub.app.adapter.HomePagerAdapter
 import com.sophimp.ghub.app.bean.HomeBottomTab
 import com.sophimp.ghub.app.databinding.ActivityMainHomeBinding
 import com.sophimp.ghub.app.databinding.BottomTabItemBinding
 import com.sophimp.ghub.app.viewmodel.MainViewModel
-import com.sophimp.ghub.app.viewmodel.ViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainHomeActivity : BaseTitleActivity<ActivityMainHomeBinding>() {
-    lateinit var viewModel: MainViewModel
-    var itemBindings = mutableListOf<BottomTabItemBinding>()
+    val viewModel by viewModels<MainViewModel>()
 
+    var itemBindings = mutableListOf<BottomTabItemBinding>()
     override fun initData() {
-        val viewModelProvider = ViewModelProvider(this)
+//        val viewModelProvider = ViewModelProvider(this)
+//        viewModel = viewModelProvider.get(MainViewModel::class.java)
         _binding.tlBottom.itemIsEquWidth = true
-        viewModel = viewModelProvider.get(MainViewModel::class.java)
 
         val fragments = mutableListOf<Fragment>()
         viewModel.tabItems.observe(this) { tabItems ->

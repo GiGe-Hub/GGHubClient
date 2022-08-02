@@ -12,6 +12,12 @@ dependencies {
     api Libs.ThirdLib.mmkv
     api Libs.AndroidX.swipeRefreshLayout
 
+    api Libs.AndroidX.Jetpack.lifecycle_viewModel
+    api Libs.AndroidX.Jetpack.lifecycle_livedata
+    api Libs.AndroidX.Jetpack.activityKtx
+    api Libs.AndroidX.Jetpack.fragmentKtx
+    kapt Libs.AndroidX.Jetpack.lifecycle_compiler
+
     implementation Libs.ThirdLib.jsch
     implementation Libs.ThirdLib.commonIO
 //    implementation Libs.ThirdLib.jgit
